@@ -1,0 +1,44 @@
+﻿@model Employee
+
+<style>
+    .btn_name {
+        color: black;
+        font-family: Arial;
+    }
+</style>
+
+<form method="post">
+    <div class="border p-3 mt-4 row">
+        <div class="row text-primary p-0">
+            <h2 class="text-primary btn_name text-dark">Create Employee</h2>
+            <hr />
+        </div>
+        <div class="mb-3 row ">
+            <lable class="pl-5 mb-6 p-0">Employee Name</lable>
+            <input asp-for="EmpName" type="text" class="form-control pl-5 col-6 col-md-3 mt-3 border border-dark" />
+        </div>
+        @* <div class="mb-3 row">
+        <lable class="pl-5 mb-6 p-0">Gender</lable>
+
+        <input asp-for="Gender" type="text" class="form-control pl-5 col-6 col-md-3 mt-3 border border-dark" />
+        </div> *@
+        <!-- Example split danger button -->
+        <div class="mb-3 row">
+            <lable class="pl-5 mb-6 p-0" for="GenderList">Gender</lable>
+            <select asp-for="Gender" id="GenderList" name="GenderList" class=" form-control pl-5 col-6 col-md-3 mt-3 border border-dark">
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+                <option value="3">Transgender</option>
+            </select>
+            @* <input asp-for="Gender" type="text" class="form-control pl-5 col-6 col-md-3 mt-3 border border-dark" /> *@
+        </div>
+        <div class="mb-3 row">
+            <lable class="pl-5 mb-6 p-0">City</lable>
+            <input asp-for="City" type="text" class="form-control pl-5 col-6 col-md-3 mt-3 border border-dark" />
+        </div>
+        <div class="p-0 ">
+            <button class="btn btn-warning col-6 col-md-3 ">Save</button>
+            <a asp-controller="Employee" asp-action="Index" class="btn btn-dark col-6 col-md-3">Back To List</a>
+        </div>
+    </div>
+</form>
